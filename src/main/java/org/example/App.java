@@ -4,21 +4,17 @@ public class App {
 
     public static void main (String[] args){        
         
-       Light bedroomLight = new LightWithInt (200);
-       Light kitchenLight = new LightOnOff (true);
+        LightWithInt livingRoomLight = new LightWithInt (200);
+        
+        Dimmable bedroomLight = new LightWithInt (500);
+        
+        Switchable bathroomLight = new LightWithInt (1000);
+        
+        Switchable light1;
+        Dimmable light2;
+        LightWithInt light3;
+        
+        
        
-       
-       LightWithInt livingRoomLight = new LightWithInt (100);
-       LightOnOff bathroomLight = new LightOnOff (false );
-       
-       
-      livingRoomLight.printMessage();
-      bathroomLight.print();
-      
-      System.out.println (bedroomLight.getIntensity());
-      System.out.println (kitchenLight.getIntensity());
-    
-    
-    
     }
 }

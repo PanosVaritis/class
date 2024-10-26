@@ -4,47 +4,59 @@ package org.example;
  *
  * @author panos
  */
-public class LightWithInt implements Light {
-    //the light works with intensity. When 0 the ligh is cloded. With anyhing else the light is open
+public class LightWithInt implements Switchable, Dimmable {
+   
+    private static final int DEFAULT_INTENSITY = 100;
+    private static final int MINIMUM_INTENSITY = 0;
     private int intensity;
     
+    public LightWithInt (){
+        setIntensity(DEFAULT_INTENSITY);
+    }
+    
     public LightWithInt (int intensity){
-        setIntensity(intensity);
+        setIntensity (intensity);
+        
     }
     
     private void setIntensity (int intensity){
         this.intensity = intensity;
     }
     
+    private int getIntensity (){
+        return this.intensity;
+    }
+    
+    public boolean isOn (){
+        return this.getIntensity() > MINIMUM_INTENSITY; 
+    }
     
     public void turnOn (){
         if (this.isOn()){
             System.out.println ("The light is already on!!!");
         }else {
-            setIntensity(1);
+            setIntensity(DEFAULT_INTENSITY);
         }
-        
-        
     }
     
     public void turnOff (){
         if (this.isOn()){
-            setIntensity(0);
+            setIntensity (MINIMUM_INTENSITY);
         }else {
-            System.out.println ("The light was alredy off");
+            System.out.println ("The ligh is already off!!");
         }
-        
     }
     
-    public boolean isOn(){
-        return this.intensity >= 0;
+    public void dim(){
+        setIntensity(--this.intensity);
     }
     
-    public int getIntensity (){
-        return this.intensity;
+    public void brighten(){
+        setIntensity(++this.intensity);
     }
     
-    public void printMessage (){
-        System.out.println ("We are in class Light with intensity");
+    public void message(){
+        System.out.println ("We are inside the class Light with intensity, in the method message()");
     }
+
 }
