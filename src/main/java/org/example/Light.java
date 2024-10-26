@@ -4,6 +4,7 @@ public class Light {
     private int intensity;
     public static final int MAX_INTENSITY = 100;
     public static final int MIN_INTENSITY = 0;
+  
     
     public Light(){
         setIntensity(MAX_INTENSITY);
@@ -79,6 +80,8 @@ public class Light {
     }  
     
     
-    public void messageForAllChilds (){}
+    public void messageForAllChilds (){
+        System.out.println ("I am a method and now i am inside the Light class!!!");
+    }
     
 }

@@ -23,6 +23,10 @@ public class ColoredLight extends Light{
        this.message();
        this.getColor().colorMessage();
    }
-
+   
+   @Override 
+   public void messageForAllChilds (){
+       System.out.println ("Thank you for callinf me. Now we are inisde the ColoredLightClass!!");
+   }
 
 }
