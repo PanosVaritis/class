@@ -35,7 +35,12 @@ public class LightOnOff implements Light{
     }   
 
     public int getIntensity (){
-        return 10;
+        return -1;
     }
+
+    public void print (){
+        System.out.println ("We are inside the class Light On either Off");
+    }
+
 }
     

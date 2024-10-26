@@ -43,4 +43,8 @@ public class LightWithInt implements Light {
     public int getIntensity (){
         return this.intensity;
     }
+    
+    public void printMessage (){
+        System.out.println ("We are in class Light with intensity");
+    }
 }
